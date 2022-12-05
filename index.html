@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <title>selected-option</title>
+</head>
+<body>
+    <header>
+        <h1 class="blind">selected value Check!</h1>
+    </header>
+    <section>
+        <p>첫 select-option 선택 시, 나머지 것들도 같이 선택되도록 적용</p>
+        <form>
+            <div id="div-0">
+                <select class="sel-box sel1" id="sel1" onchange="changeSelect();">
+                    <option value="선택창1">선택창1</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div id="div-1">
+                <select class="sel-box sel2">
+                    <option value="선택창2">선택창2</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div id="div-2">
+                <select class="sel-box sel3">
+                    <option value="선택창3">선택창3</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>    
+            </div>
+            
+            <div id="div-3">
+                <select class="sel-box sel4">
+                    <option value="선택창4">선택창4</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+        </form>
+    </section>
+    <script>
+       
+        function changeSelect() {
+
+            let selBoxes = document.querySelectorAll('.sel-box option');
+            let sel1Box = document.getElementById('sel1');
+            let sel1BoxValue = sel1Box.options[sel1Box.selectedIndex].value;
+            let sel1BoxText = sel1Box.options[sel1Box.selectedIndex].text;
+            
+            for(var i=0; i<selBoxes.length; i++){
+                var selBoxesValue = selBoxes[i].innerText;
+                var selBoxesText = selBoxes[i].innerText;
+                if(sel1BoxValue === selBoxesValue) {
+                    console.log(`같음 sel1BoxValue ${sel1BoxValue} selBoxesValue ${selBoxesValue}`);
+                    selBoxes[i].selected = true;
+                } else {
+                    console.log(`다름 sel1BoxValue ${sel1BoxValue} selBoxesValue ${selBoxesValue}`);
+                    selBoxes[i].selected = false;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
