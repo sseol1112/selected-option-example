@@ -4,81 +4,197 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <!-- <script src="../script/script.js"></script> -->
     <title>selected-option</title>
 </head>
 <body>
-    <header>
-        <h1 class="blind">selected value Check!</h1>
-    </header>
-    <section>
-        <p>첫 select-option 선택 시, 나머지 것들도 같이 선택되도록 적용</p>
-        <form>
-            <div id="div-0">
-                <select class="sel-box sel1" id="sel1" onchange="changeSelect();">
-                    <option value="선택창1">선택창1</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-            <div id="div-1">
-                <select class="sel-box sel2">
-                    <option value="선택창2">선택창2</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-
-            <div id="div-2">
-                <select class="sel-box sel3">
-                    <option value="선택창3">선택창3</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>    
-            </div>
-            
-            <div id="div-3">
-                <select class="sel-box sel4">
-                    <option value="선택창4">선택창4</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-        </form>
-    </section>
+    <div class="wrap">
+        <header>
+            <h1 class="blind">selected value Check!</h1>
+        </header>
+        <section>
+            <p>첫 select-option 선택 시, 나머지 것들도 같이 선택되도록 적용</p>
+            <form>
+                <div id="div-0">
+                    <select class="sel-box sel1" id="sel1">
+                        <option value="선택창1">선택창1</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="div-1">
+                    <select class="sel-box sel2" id="sel2">
+                        <option value="선택창2">선택창2</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+    
+                <div id="div-2">
+                    <select class="sel-box sel3" id="sel3">
+                        <option value="선택창3">선택창3</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>    
+                </div>
+                
+                <div id="div-3">
+                    <select class="sel-box sel4" id="sel4">
+                        <option value="선택창4">선택창4</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </form><hr>
+            <form>
+                <div id="div-0">
+                    <select class="sel-box sel1">
+                        <option value="선택창1">선택창1</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+                <div id="div-1">
+                    <select class="sel-box sel2">
+                        <option value="선택창2">선택창2</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+    
+                <div id="div-2">
+                    <select class="sel-box sel3">
+                        <option value="선택창3">선택창3</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>    
+                </div>
+                
+                <div id="div-3">
+                    <select class="sel-box sel4">
+                        <option value="선택창4">선택창4</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </form>
+        </section>
+    </div>
     <script>
-       
-        function changeSelect() {
+        //221206 - script 구조 변경 : S
+        $(document).ready(function(){
+            $('#sel1').change(function(){
+                changeSelect('sel1');
+            })
+            $('#sel2').change(function(){
+                changeSelect('sel2');
+            })
+            $('#sel3').change(function(){
+                changeSelect('sel3');
+            })
+            $('#sel4').change(function(){
+                changeSelect('sel4');
+            })
+        })
 
-            let selBoxes = document.querySelectorAll('.sel-box option');
+        function changeSelect(type) {
+            let sel1Boxes = document.querySelectorAll('.sel1 option');
             let sel1Box = document.getElementById('sel1');
             let sel1BoxValue = sel1Box.options[sel1Box.selectedIndex].value;
             let sel1BoxText = sel1Box.options[sel1Box.selectedIndex].text;
-            
-            for(var i=0; i<selBoxes.length; i++){
-                var selBoxesValue = selBoxes[i].innerText;
-                var selBoxesText = selBoxes[i].innerText;
-                if(sel1BoxValue === selBoxesValue) {
-                    console.log(`같음 sel1BoxValue ${sel1BoxValue} selBoxesValue ${selBoxesValue}`);
-                    selBoxes[i].selected = true;
-                } else {
-                    console.log(`다름 sel1BoxValue ${sel1BoxValue} selBoxesValue ${selBoxesValue}`);
-                    selBoxes[i].selected = false;
+
+            let sel2Boxes = document.querySelectorAll('.sel2 option');
+            let sel2Box = document.getElementById('sel2');
+            let sel2BoxValue = sel2Box.options[sel2Box.selectedIndex].value;
+            let sel2BoxText = sel2Box.options[sel2Box.selectedIndex].text;
+
+            let sel3Boxes = document.querySelectorAll('.sel3 option');
+            let sel3Box = document.getElementById('sel3');
+            let sel3BoxValue = sel3Box.options[sel3Box.selectedIndex].value;
+            let sel3BoxText = sel3Box.options[sel3Box.selectedIndex].text;
+
+            let sel4Boxes = document.querySelectorAll('.sel4 option');
+            let sel4Box = document.getElementById('sel4');
+            let sel4BoxValue = sel4Box.options[sel4Box.selectedIndex].value;
+            let sel4BoxText = sel4Box.options[sel4Box.selectedIndex].text;
+
+            if(type === "sel1") {
+                for(var i=0; i<sel1Boxes.length; i++){
+                    var sel1BoxesValue = sel1Boxes[i].innerText;
+                    var sel1BoxesText = sel1Boxes[i].innerText;
+                    if(sel1BoxValue === sel1BoxesValue) {
+                        console.log(`같음 sel1BoxValue ${sel1BoxValue} sel1BoxesValue ${sel1BoxesValue}`);
+                        sel1Boxes[i].selected = true;
+                    } else {
+                        console.log(`다름 sel1BoxValue ${sel1BoxValue} sel1BoxesValue ${sel1BoxesValue}`);
+                        sel1Boxes[i].selected = false;
+                    }
+                }
+            } else if (type === "sel2") {
+                for(var i=0; i<sel2Boxes.length; i++){
+                    var sel2BoxesValue = sel2Boxes[i].innerText;
+                    var sel2BoxesText = sel2Boxes[i].innerText;
+                    if(sel2BoxValue === sel2BoxesValue) {
+                        console.log(`같음 sel2BoxValue ${sel2BoxValue} sel2BoxesValue ${sel2BoxesValue}`);
+                        sel2Boxes[i].selected = true;
+                    } else {
+                        console.log(`다름 sel2BoxValue ${sel2BoxValue} sel2BoxesValue ${sel2BoxesValue}`);
+                        sel2Boxes[i].selected = false;
+                    }
+                }
+            } else if (type === "sel3") {
+                for(var i=0; i<sel3Boxes.length; i++){
+                    var sel3BoxesValue = sel3Boxes[i].innerText;
+                    var sel3BoxesText = sel3Boxes[i].innerText;
+                    if(sel3BoxValue === sel3BoxesValue) {
+                        console.log(`같음 sel3BoxValue ${sel3BoxValue} sel3BoxesValue ${sel3BoxesValue}`);
+                        sel3Boxes[i].selected = true;
+                    } else {
+                        console.log(`다름 sel3BoxValue ${sel3BoxValue} sel3BoxesValue ${sel3BoxesValue}`);
+                        sel3Boxes[i].selected = false;
+                    }
+                }
+            } else {
+                for(var i=0; i<sel4Boxes.length; i++){
+                    var sel4BoxesValue = sel4Boxes[i].innerText;
+                    var sel4BoxesText = sel4Boxes[i].innerText;
+                    if(sel4BoxValue === sel4BoxesValue) {
+                        console.log(`같음 sel4BoxValue ${sel4BoxValue} sel4BoxesValue ${sel4BoxesValue}`);
+                        sel4Boxes[i].selected = true;
+                    } else {
+                        console.log(`다름 sel4BoxValue ${sel4BoxValue} sel4BoxesValue ${sel4BoxesValue}`);
+                        sel4Boxes[i].selected = false;
+                    }
                 }
             }
         }
+    //221206 - script 구조 변경 : E
     </script>
 </body>
 </html>
